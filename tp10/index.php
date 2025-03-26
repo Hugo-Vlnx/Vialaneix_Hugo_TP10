@@ -1,9 +1,14 @@
 <?php 
-error_reporting(E_ALL); 
+
+// Afficher les erreurs à l'écran
 ini_set('display_errors', 1);
+// Afficher les erreurs et les avertissements
+error_reporting(E_ALL);
+
+
 require('Model/pdo.php');
 
-try {
+
     $etudiant = $dbPDO->prepare("
     SELECT etudiants.*, classes.libelle as classe_nom 
     FROM etudiants
@@ -23,9 +28,7 @@ try {
     $professeur->execute();
     $professeurs = $professeur->fetchAll(PDO::FETCH_ASSOC);
     
-} catch(PDOException $e) {
-    die("Erreur SQL : " . $e->getMessage());
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,6 +50,13 @@ try {
             text-align: center;
             margin-bottom: 2rem;
         }
+        .login-btn {
+       color: #dee2e6;
+    }
+
+    .login-btn:hover {
+        text-decoration: underline;
+    }
         
         .table-container {
             overflow-x: auto;
@@ -105,10 +115,11 @@ try {
 <body>
     <header>
         <h1>AFFICHAGE</h1>
+        <a href="login.php" class="login-btn">Connexion</a>
     </header>
     
     <div class="container">
-        <!-- Tableau des Étudiants -->
+      
         <section class="table-section">
             <h2>Liste des Étudiants</h2>
             <table>
