@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['add_admin'])) {
         if ($check_email->rowCount() > 0) {
             $admin_error = 'Cet email est déjà utilisé';
         } else {
-            // Insérer le nouvel administrateur
+           
             $query = $dbPDO->prepare("INSERT INTO user (email, password) VALUES (:email, :password)");
             $query->bindParam(':email', $email);
             $query->bindParam(':password', $password);
@@ -245,7 +245,7 @@ $professeurs = $professeur->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <div class="container">
-        <!-- Formulaire d'ajout d'administrateur -->
+        
         <div class="admin-form">
             <h2>Ajouter un Administrateur</h2>
             <?php if (!empty($admin_error)): ?>
@@ -272,7 +272,7 @@ $professeurs = $professeur->fetchAll(PDO::FETCH_ASSOC);
             </form>
         </div>
 
-        <!-- Les autres sections (Étudiants, etc.) restent identiques -->
+
         <div class="action-buttons">
             <a href="nouvel_etudiant.php" class="action-btn">Ajouter un Étudiant</a>
             <a href="nouvelle_matiere.php" class="action-btn">Ajouter une Matière</a>
