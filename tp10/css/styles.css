@@ -1,0 +1,61 @@
+/* Style général de la page */
+body {
+    background-color: red !important; /* Ivoire */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 2rem;
+}
+
+/* Conteneur du tableau */
+.table-container {
+    overflow-x: auto;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Style du tableau */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+/* En-têtes de colonne */
+.data-table thead {
+    background-color: #1a365d; /* Bleu nuit */
+    color: white;
+}
+
+.data-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+}
+
+/* Cellules du tableau */
+.data-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #2d3748;
+}
+
+/* Lignes alternées */
+.data-table tbody tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+/* Survol des lignes */
+.data-table tbody tr:hover {
+    background-color: #ebf8ff;
+}
+
+/* Pied de tableau (si ajouté) */
+.table-footer {
+    background-color: #1a365d;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
