@@ -274,8 +274,8 @@ $professeurs = $professeur->fetchAll(PDO::FETCH_ASSOC);
 
 
         <div class="action-buttons">
-            <a href="nouvel_etudiant.php" class="action-btn">Ajouter un Étudiant</a>
-            <a href="nouvelle_matiere.php" class="action-btn">Ajouter une Matière</a>
+            <a href="../tp10/View/nouvel_etudiant.php" class="action-btn">Ajouter un Étudiant</a>
+            <a href="../tp10/View/nouvelle_matiere.php" class="action-btn">Ajouter une Matière</a>
         </div>
         
         <section class="table-section">
@@ -298,8 +298,8 @@ $professeurs = $professeur->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= htmlspecialchars($e['nom']) ?></td>
                         <td><?= htmlspecialchars($e['classe_nom']) ?></td>
                         <td class="action-column">
-                            <a href="modif_etudiant.php?id=<?= $e['id'] ?>">Modifier</a>
-                            <a href="suppression_etudiant.php?id=<?= $e['id'] ?>" onclick="return confirm('Voulez-vous vraiment supprimer cet étudiant ?');">Supprimer</a>
+                            <a href="../tp10/View/modif_etudiant.php?id=<?= $e['id'] ?>">Modifier</a>
+                            <a href="../tp10/View/suppression_etudiant.php?id=<?= $e['id'] ?>" onclick="return confirm('Voulez-vous vraiment supprimer cet étudiant ?');">Supprimer</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>
