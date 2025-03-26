@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : dim. 23 mars 2025 à 20:06
+-- Généré le : mer. 26 mars 2025 à 17:39
 -- Version du serveur : 5.7.24
 -- Version de PHP : 8.3.1
 
@@ -60,14 +60,14 @@ CREATE TABLE `etudiants` (
 --
 
 INSERT INTO `etudiants` (`id`, `prenom`, `nom`, `classe_id`) VALUES
-(4, 'Albert', 'Schuman', 1),
-(5, 'Alphonse', 'Cabrol', 1),
+(5, 'Arthur', 'Cabrol', 1),
 (6, 'Alric', 'Duportic', 1),
 (9, 'Martin', 'Hurvois', 3),
 (10, 'Hugo ', 'Vialaneix', 3),
 (12, 'Aylia', 'Sabadie', 3),
 (13, 'Laureen', 'Fabre', 2),
-(14, 'Elisabeth', 'Olsen', 1);
+(14, 'Elisabeth', 'Olsen', 1),
+(15, 'Stella', 'Vanlanke', 2);
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,8 @@ INSERT INTO `matiere` (`id`, `lib`) VALUES
 (3, 'Sport'),
 (4, 'Danse'),
 (5, 'Anglais'),
-(6, 'mathématiques');
+(6, 'mathématiques'),
+(7, 'Biologie');
 
 -- --------------------------------------------------------
 
@@ -115,6 +116,26 @@ INSERT INTO `professeurs` (`id`, `prenom`, `nom`, `id_matiere`, `id_classe`) VAL
 (5, 'Jesus', 'Christ', 2, 2),
 (6, 'Dora', 'l\'exploratrice', 4, 1),
 (7, 'Laureen', 'Fabre', 3, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `email`, `password`) VALUES
+(1, 'hugo.vialaneix@gmail.com', 'hugohugo'),
+(4, 'aylia@gmail.com', '1234');
 
 --
 -- Index pour les tables déchargées
@@ -148,6 +169,12 @@ ALTER TABLE `professeurs`
   ADD KEY `fk_prof_classe` (`id_classe`);
 
 --
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -167,13 +194,19 @@ ALTER TABLE `etudiants`
 -- AUTO_INCREMENT pour la table `matiere`
 --
 ALTER TABLE `matiere`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `professeurs`
 --
 ALTER TABLE `professeurs`
   MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
